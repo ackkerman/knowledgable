@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Crimson Text';
+  src: url('/fonts/crimson-text-latin-400.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Serif CJK JP';
+  src: url('/fonts/NotoSerifCJKjp-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --sl-font: 'Noto Serif CJK JP', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Crimson Text', 'Noto Serif CJK JP', serif;
+}
+
+/* Dark mode colors. */
+:root {
+	--sl-color-accent-low: #322000;
+	--sl-color-accent: #8b6100;
+	--sl-color-accent-high: #e8c285;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #eeeeee;
+	--sl-color-gray-2: #c2c2c2;
+	--sl-color-gray-3: #8b8b8b;
+	--sl-color-gray-4: #585858;
+	--sl-color-gray-5: #383838;
+	--sl-color-gray-6: #272727;
+	--sl-color-black: #181818;
+}
+/* Light mode colors. */
+:root[data-theme='light'] {
+	--sl-color-accent-low: #efd2a5;
+	--sl-color-accent: #8d6300;
+	--sl-color-accent-high: #442d00;
+	--sl-color-white: #181818;
+	--sl-color-gray-1: #272727;
+	--sl-color-gray-2: #383838;
+	--sl-color-gray-3: #585858;
+	--sl-color-gray-4: #8b8b8b;
+	--sl-color-gray-5: #c2c2c2;
+	--sl-color-gray-6: #eeeeee;
+	--sl-color-gray-7: #f6f6f6;
+	--sl-color-black: #ffffff;
+}

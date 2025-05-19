@@ -1,0 +1,1 @@
+convert favicon.png -resize 32x32 -define icon:auto-resize favicon.ico

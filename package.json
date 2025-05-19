@@ -6,7 +6,14 @@
     "dev": "turbo run dev",
     "build": "turbo run build",
     "lint": "turbo run lint",
-    "test": "turbo run test"
+    "test": "turbo run test",
+
+    "docs:sync": "node ./scripts/copy-docs.mjs",
+    "docs:build": "pnpm run docs:sync && pnpm --filter docs-site run build",
+    "docs:dev": "pnpm run docs:sync && pnpm --filter docs-site run dev",
+
+
+    "deploy:docs": "turbo run build --filter=docs-site && npx gh-pages -d apps/docs-site/dist"
   },
   "workspaces": [
     "apps/*",
