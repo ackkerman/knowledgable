@@ -11,6 +11,7 @@ If completing the user's task requires writing or modifying files:
 - Check git status to confirm your commit. You must leave your worktree in a clean state.
 - Only committed code will be evaluated.
 - Do not modify or amend existing commits.
+- Create diagrame by using mermaid when creating pull-request.
 
 # AGENTS.md spec
 - Containers often contain AGENTS.md files. These files can appear anywhere in the container's filesystem. Typical locations include `/`, `~`, and in various places inside of Git repos.
@@ -42,3 +43,46 @@ If completing the user's task requires writing or modifying files:
 - Prefer file citations over terminal citations unless the terminal output is directly relevant to the clauses before the citation, i.e. clauses on test results.
   - For PR creation tasks, use file citations when referring to code changes in the summary section of your final response, and terminal citations in the testing section.
   - For question-answering tasks, you should only use terminal citations if you need to programmatically verify an answer (i.e. counting lines of code). Otherwise, use file citations.
+
+Below is a turnkey instruction block you can drop into an **AGENTS.md** (or similar) so that any generative-AI agent working in this repo will (1) understand that **`docs/`** is the authoritative source for your static-site content and (2) always return well-structured, content-rich documentation files.
+
+# Documentation-specific rules
+* Japanese in formal
+* The user will supply a documentation-related task.
+* All source files for the public documentation site live under **`/docs`** in the monorepo root.
+* Those files are copied verbatim into **`apps/docs-site/src/content`** during the build; therefore any change inside **`docs/`** is automatically reflected in the generated site.
+* Produce Markdown or MDX that is directly consumable by Astro + Starlight.
+1. **Front-matter is mandatory**
+   Every Markdown/MDX file under `docs/` **must** start with a YAML block:
+
+   ```yaml
+   ---
+   title: <Human-readable title>
+   description: <One-sentence SEO summary>
+   ---
+   ```
+2. Heading hierarchy
+   * Exactly one `#` H1 per page (the same text as `title:`).
+   * Use `##` and `###` for subsections—never skip a level.
+3. Rich content expectations
+   | Element        | Minimum quality bar                                                       |
+   | -------------- | ------------------------------------------------------------------------- |
+   | Code blocks    | Provide runnable examples; specify language, e.g. <code>\`\`\`bash</code> |
+   | Diagrams       | Prefer Mermaid. Use clear labels and comments.                            |
+   | Lists & tables | Use when they improve scannability; avoid “wall of text”.                 |
+   | Cross-links    | Link to related docs using relative paths (`./reference/index.md`).       |
+   | Admonitions    | Use Starlight syntax (`:::info`, `:::warning`, etc.) for important notes. |
+5. **Filename conventions**
+   * Lower-case kebab-case, no spaces: `core-concepts/implementation-plan.md`
+   * Index pages must be named `index.md` or `index.mdx`.
+6. **Keep the build green**
+   Run `pnpm run docs:build` locally; the command will copy docs and invoke `astro build`. Fix any warnings or errors before committing.
+
+# Style guide (excerpt)
+* **Voice:** concise, active, second person (“You can…”, “Run this command…”).
+* **Tone:** friendly yet professional—assume the reader is a developer.
+* **Spelling:** American English (`initialize`, not `initialise`).
+* **Terminology:** use consistent terms; prefer “static-site generator” over “SSG”, etc.
+
+> **Remember:** any file you place inside `docs/` becomes part of the public site. Impress the readers—add meaningful explanations, examples, and visuals, not skeleton placeholders.
+> **Remember:** When providing explanations, interleave clear Mermaid diagrams and well-formatted code blocks throughout the narrative—use diagrams to visualize concepts and code blocks to walk readers step-by-step through the implementation.
