@@ -1,26 +1,28 @@
 {
-  "name": "@apps/web",
+  "name": "web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "^13.4.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "cytoscape": "^3.28.1",
-    "gsap": "^3.12.2",
-    "clsx": "^1.2.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.3.2",
+    "@kg/ui": "workspace:*"
   },
   "devDependencies": {
-    "typescript": "^5.1.6",
-    "tailwindcss": "^3.4.7",
-    "postcss": "^8.4.23",
-    "autoprefixer": "^10.4.14",
-    "@shadcn/cli": "^0.3.0"
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "@eslint/eslintrc": "^3"
   }
 }

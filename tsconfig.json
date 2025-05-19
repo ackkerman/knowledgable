@@ -1,9 +1,6 @@
 {
   "extends": "./tsconfig.base.json",
   "references": [
-    { "path": ".packages/data/" },
-    { "path": "packages/graph" },
-    { "path": "packages/ui" },
-    { "path": "apps/web" }
+    
   ]
 }
