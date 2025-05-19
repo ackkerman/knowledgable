@@ -1,0 +1,12 @@
+{
+  "name": "knowledgeable",
+  "version": "1.0.0",
+  "description": "このリポジトリは、プレーンテキストの記事から知識グラフを生成し、ブラウザ上で閲覧できるツールのベースプロジェクトです。",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
