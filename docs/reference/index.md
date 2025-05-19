@@ -1,24 +1,26 @@
 ---
 title: Reference
+description: パッケージ構成と公開 API の概要
 ---
 
 # リファレンス
 
 ## 設計思想
-- プレーンテキストから知識グラフを生成し、ブラウザで閲覧するツール。
-- turbrorepo による monorepo 管理で `apps` と `packages` に分割。
-- データはブラウザのローカルストレージに保存し、オフラインでも利用可能。
+- プレーンテキストから知識グラフを生成し、ブラウザで閲覧するツール
+- turbrorepo による monorepo 管理で `apps` と `packages` に分割
+- データはブラウザのローカルストレージに保存し、オフラインでも利用可能
 
 ## アーキテクチャ概要
-- **packages/data**: ドキュメントデータ管理。
-- **packages/graph**: グラフデータ構造と描画処理。
-- **packages/ui**: React コンポーネントなど UI 層。
-- **apps/web**: Next.js を用いたアプリケーション本体。
+- **packages/data**: ドキュメントデータ管理
+- **packages/graph**: グラフデータ構造と描画処理
+- **packages/ui**: React コンポーネントなど UI 層
+- **apps/web**: Next.js を用いたアプリケーション本体
+詳しい設計思想は [Architecture](./architecture.md) を参照してください。
 
 ## あるべき姿
-- ドキュメント解析からグラフ生成までの自動化ロジックを実装する。
-- 登録ドキュメントの検索・管理 UI を拡充する。
-- 包括的なテストとドキュメントを整備する。
+- ドキュメント解析からグラフ生成までの自動化ロジックを実装する
+- 登録ドキュメントの検索・管理 UI を拡充する
+- 包括的なテストとドキュメントを整備する
 
 ## 現在の実装と API
 ### packages/data
@@ -35,8 +37,4 @@ title: Reference
 ### packages/ui
 React 製のビューワを提供する。
 - `GraphViewer` コンポーネント【F:packages/ui/src/GraphViewer.tsx†L1-L26】
-
-### 共通ユーティリティ
-ブラウザ環境外でも動作するローカルストレージラッパーを用意している。
-- `getStorage` などの実装【F:src/localStorage.js†L1-L46】
 

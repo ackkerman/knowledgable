@@ -1,17 +1,18 @@
 ---
-title: Knowleagable
+title: Knowledgable
 template: splash
+description: プレーンテキストから知識グラフを生成しブラウザで閲覧できるツール
 hero:
-  title: 'My Project: Stellar Stuff Sooner'
-  tagline: Take your stuff to the moon and back in the blink of an eye.
+  title: 'Knowledgable'
+  tagline: 記事を知識グラフとして瞬時に可視化
   image:
-    alt: A glittering, brightly colored logo
+    alt: Knowledgable logo
     file: ../../../../../assets/kg.png
   actions:
-    - text: Learn more
+    - text: はじめに
       link: /introduction/
       icon: right-arrow
-    - text: View on GitHub
+    - text: GitHub
       link: https://github.com/ackkerman/knowledgable
       icon: external
       variant: minimal
@@ -19,24 +20,19 @@ hero:
         rel: me
 ---
 
-このリポジトリは、プレーンテキストの記事から知識グラフを生成し、
-ブラウザ上で閲覧できるツールのベースプロジェクトです。
-
-主な技術スタックは以下のとおりです。
+Knowledgable は、ドキュメントを取り込み知識グラフを生成するブラウザアプリです。主な構成要素は以下の通りです。
 
 - **Next.js** + **tailwindcss** + **shadcn** + **GSAP** による UI
 - **cytoscape.js** を用いたグラフ描画
 - **turborepo** による monorepo 管理
-- データ保存はブラウザのローカルストレージ
+- ブラウザローカルストレージによるデータ保存
 
-詳しい要件と実装計画は `docs/` ディレクトリを参照してください。
-
-TODO リストは `TODO.md` に記載されています。
+詳しい背景や目的は [導入](./introduction.md) を参照してください。
 
 ## テスト実行方法
 
 ```bash
-npm test
+pnpm test
 ```
 
-Node.js 標準の `node:test` を用いてテストを実行します。
+Node.js 標準の `node:test` を利用しています。
