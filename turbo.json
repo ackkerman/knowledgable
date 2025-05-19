@@ -1,8 +1,10 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "tasks": {
+    "docs-sync": { "outputs": [] },
+
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "docs-sync"],
       "outputs": ["dist/**"]
     },
     "dev": {
