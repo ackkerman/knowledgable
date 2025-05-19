@@ -1,5 +1,6 @@
 {
-  "$schema": "https://turborepo.org/schema.json",
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
   "tasks": {
     "docs-sync": { "outputs": [] },
 
@@ -8,7 +9,10 @@
       "outputs": ["dist/**"]
     },
     "dev": {
-      "cache": false
+      "dependsOn": ["^dev"],
+      "persistent": true,
+      "cache": false,
+      "outputs": []
     },
     "lint": {},
     "test": {}

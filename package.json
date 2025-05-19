@@ -1,5 +1,5 @@
 {
-  "name": "knowledge-graph-tool",
+  "name": "knowledgable",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,12 +7,9 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "test": "turbo run test",
-
     "docs:sync": "node ./scripts/copy-docs.mjs",
     "docs:build": "pnpm run docs:sync && pnpm --filter docs-site run build",
     "docs:dev": "pnpm run docs:sync && pnpm --filter docs-site run dev",
-
-
     "deploy:docs": "turbo run build --filter=docs-site && npx gh-pages -d apps/docs-site/dist"
   },
   "workspaces": [
@@ -20,6 +17,10 @@
     "packages/*"
   ],
   "devDependencies": {
-    "turbo": "^1.6.3"
+    "turbo": "^2.5.3"
+  },
+  "packageManager": "pnpm@10.3.0",
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
