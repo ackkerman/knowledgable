@@ -85,4 +85,5 @@ Below is a turnkey instruction block you can drop into an **AGENTS.md** (or simi
 * **Terminology:** use consistent terms; prefer “static-site generator” over “SSG”, etc.
 
 > **Remember:** any file you place inside `docs/` becomes part of the public site. Impress the readers—add meaningful explanations, examples, and visuals, not skeleton placeholders.
-> **Remember:** When providing explanations, interleave clear Mermaid diagrams and well-formatted code blocks throughout the narrative—use diagrams to visualize concepts and code blocks to walk readers step-by-step through the implementation.
+> **Remember:** when providing explanations, interleave clear Mermaid diagrams and well-formatted code blocks throughout the narrative—use diagrams to visualize concepts and code blocks to walk readers step-by-step through the implementation.
+> **Remember:** after editting code, you must check & update any documents (`docs/`) to keep latest.

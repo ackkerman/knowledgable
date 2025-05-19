@@ -16,4 +16,4 @@ Knowledgable は、単純なテキストから自動で知識グラフを生成�
 - UI コンポーネントは React と shadcn により構成
 - すべてのデータはローカルストレージに保存され、外部サーバーを必要としません
 
-より具体的な要件は [要件定義](./core-concepts/requirements.md) を参照してください。
+より具体的な要件は [要件定義](../core-concepts/requirements) を参照してください。
