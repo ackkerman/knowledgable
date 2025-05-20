@@ -1,4 +1,5 @@
 import cytoscape from 'cytoscape';
+export { analyzeDocument, type AnalyzedDocument } from './analyze.js';
 
 export interface GraphNode {
   id: string;

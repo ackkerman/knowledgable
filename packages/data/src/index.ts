@@ -5,6 +5,8 @@ export interface Document {
   createdAt: number;
 }
 
+export { importDocsFromDir } from './importDocs.js';
+
 export function saveDoc(doc: Document): void {
   const docs = getDocs();
   docs.push(doc);
