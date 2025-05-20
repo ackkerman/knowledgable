@@ -17,7 +17,7 @@ TODO リストは `TODO.md` に記載されています。
 ## テスト実行方法
 
 ```bash
-npm test
+pnpm test
 ```
 
 Node.js 標準の `node:test` を用いてテストを実行します。
